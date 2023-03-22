@@ -29,7 +29,7 @@ yarn-error.log
 .history/*
 /.vscode
 /.vscode/
-
+**/.vscode/
 
 # Miscellaneous
 /.angular/cache

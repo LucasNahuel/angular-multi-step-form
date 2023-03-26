@@ -9,14 +9,19 @@ import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angula
 export class FirstStepComponent implements OnInit {
 
   firstForm = new FormGroup({
-    name : new FormControl('e.g. Stephen King', [ Validators.min(1), Validators.max(300), Validators.required]),
-    email : new FormControl('e.g. stephenking@lorem.com', [ Validators.min(1), Validators.max(300), Validators.required]),
-    phone : new FormControl('e.g. +1 234 567 890', [Validators.min(1), Validators.max(300), Validators.required])
+    name : new FormControl('', [ Validators.minLength(1), Validators.maxLength(300), Validators.required]),
+    email : new FormControl('', [ Validators.minLength(1), Validators.maxLength(300), Validators.required]),
+    phone : new FormControl('', [Validators.minLength(1), Validators.maxLength(300), Validators.required])
   });
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  nextStep(){
+    console.log("next step");
+    console.log(this.firstForm.valid);
   }
 
 }

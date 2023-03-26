@@ -12,18 +12,52 @@
         </div>
 
         <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" formControlName="name">
+
+
+            <div class="label-container">
+                <label for="name">Name</label>
+                <div class="input-error" *ngIf="this.firstForm.get('name')?.errors?.['required'] && this.firstForm.get('name')?.pristine == false">
+                    This field is required
+                </div>
+                <div class="input-error" *ngIf="this.firstForm.get('name')?.errors?.['maxlength'] && this.firstForm.get('name')?.pristine == false">
+                    Too long
+                </div>
+            </div>
+            <input placeholder="e.g. Stephen King" type="text" formControlName="name" [ngClass]="{'input-invalid': this.firstForm.get('name')?.invalid === true && this.firstForm.get('name')?.pristine === false}">
         </div>
 
         <div class="form-group">
-            <label for="email">Email Adress</label>
-            <input type="text" formControlName="email">
+            <div class="label-container">
+                <label for="name">Email address</label>
+                <div class="input-error" *ngIf="this.firstForm.get('email')?.errors?.['required'] && this.firstForm.get('email')?.pristine == false">
+                    This field is required
+                </div>
+                <div class="input-error" *ngIf="this.firstForm.get('email')?.errors?.['maxlength'] && this.firstForm.get('email')?.pristine == false">
+                    Too long
+                </div>
+                <div class="input-error" *ngIf="this.firstForm.get('email')?.errors?.['email'] && this.firstForm.get('email')?.pristine == false">
+                    Invalid email address
+                </div>
+            </div>
+            <input email placeholder="e.g. stephenking@lorem.com" type="email" formControlName="email" [ngClass]="{'input-invalid': this.firstForm.get('email')?.invalid === true && this.firstForm.get('email')?.pristine === false}">
         </div>
 
         <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="text" formControlName="phone">
+            <div class="label-container">
+                <label for="name">Phone number</label>
+                <div class="input-error" *ngIf="this.firstForm.get('phone')?.errors?.['required'] && this.firstForm.get('phone')?.pristine == false">
+                    This field is required
+                </div>
+                <div class="input-error" *ngIf="this.firstForm.get('phone')?.errors?.['maxlength'] && this.firstForm.get('phone')?.pristine == false">
+                    Too long
+                </div>
+            </div>
+            <input placeholder="e.g. +1 234 567 890" type="number" formControlName="phone" [ngClass]="{'input-invalid': this.firstForm.get('phone')?.invalid === true && this.firstForm.get('phone')?.pristine === false}">
+        </div>
+
+
+        <div class="button-submit-container">
+            <button class="submit-button" (click)="nextStep()">Next Step</button>
         </div>
 
     </form>

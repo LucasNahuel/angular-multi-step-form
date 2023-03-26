@@ -47,11 +47,18 @@ input{
     border-color: var(--cool-gray);
 }
 
-input[type="text"]:focus{
+input:hover{
+    cursor: pointer;
+}
+
+input:focus{
     border-color: var(--purplish-blue);
     color: var(--marine-blue);
     outline: none;
 }
+
+
+
 
 .form-root{
     display: flex;
@@ -70,16 +77,64 @@ app-first-step{
     width: 100%;
 }
 
+.first-step{
+    
+    height: 100%;
+}
+
 .first-step-form{
     display: flex;
     flex-direction: column;
     max-width: 500px;
     margin: auto auto;
     gap: 1em;
+    height: 100%;
 }
 
 .form-group{
     display: flex;
     flex-direction: column;
     gap: 7px;
+}
+
+.button-submit-container{
+    margin: auto 0 0 auto;
+    display: flex;
+    justify-content: end;
+}
+
+.submit-button{
+    padding: 1em;
+    color: white;
+    background-color: var(--marine-blue);
+    outline: none;
+    border-radius: 7px;
+    border-style: none;
+}
+
+.submit-button:hover{
+    cursor: pointer;
+}
+
+
+/* disables the step buttons on inputs */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.label-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-error{
+    color: var(--strawberry-red);
+}
+
+.input-invalid{
+    border-color: var(--strawberry-red);
 }

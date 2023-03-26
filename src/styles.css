@@ -71,6 +71,9 @@ input:focus{
     background-image: url(./assets/images/bg-sidebar-desktop.svg);
     height: 568px;
     width: 274px;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
 
 app-first-step{
@@ -137,4 +140,41 @@ input::-webkit-inner-spin-button {
 
 .input-invalid{
     border-color: var(--strawberry-red);
+}
+
+.step-link{
+    display: flex;
+    flex-direction: row;
+    margin: 0 2em 0 2em;
+    gap: 1em;
+}
+
+.step-number{
+    height: 30px;
+    width: 30px;
+    border-style: solid;
+    border-radius: 50%;
+    border-width: 1px;
+    border-color: var(--pastel-blue);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--pastel-blue)
+}
+
+.step-description{
+    display: flex;
+    flex-direction: column;
+}
+
+.step-title{
+    margin-block: 0;
+    color: var(--pastel-blue);
+    font-size: 12px;
+}
+
+.step-info{
+    margin-block: 0;
+    color: white;
 }

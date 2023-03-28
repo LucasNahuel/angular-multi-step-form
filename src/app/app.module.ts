@@ -6,6 +6,9 @@ import { MultiStepFormComponent } from './multi-step-form/multi-step-form.compon
 import { BulletStepperComponent } from './bullet-stepper/bullet-stepper.component';
 import { FirstStepComponent } from './first-step/first-step.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SecondStepComponent } from './second-step/second-step.component';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -13,11 +16,13 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MultiStepFormComponent,
     BulletStepperComponent,
     FirstStepComponent,
+    SecondStepComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

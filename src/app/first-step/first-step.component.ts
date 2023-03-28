@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-first-step',
@@ -7,6 +8,8 @@ import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angula
   styleUrls: ['./first-step.component.css']
 })
 export class FirstStepComponent implements OnInit {
+
+  @Output() changeStep = new EventEmitter<string>();
 
   firstForm = new FormGroup({
     name : new FormControl('', [ Validators.minLength(1), Validators.maxLength(300), Validators.required]),
@@ -19,9 +22,10 @@ export class FirstStepComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  nextStep(){
-    console.log("next step");
-    console.log(this.firstForm.valid);
+  nextStep(event : any){
+    this.changeStep.emit("second-step");
+    
+    event.preventDefault();
   }
 
 }

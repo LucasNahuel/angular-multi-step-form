@@ -4,7 +4,10 @@
     
     <p style="color: var(--cool-gray);">You have the option of monthly or yearly biling.</p> 
 
+    <div class="input-error" *ngIf="showError">Please, select a plan</div>
     <div class="plan-list">
+
+        
 
         <div class="plan" *ngFor="let plan of plans" (click)="this.selectPlanType(plan)" [ngClass]="{'selected' : planSelected === plan}">
 

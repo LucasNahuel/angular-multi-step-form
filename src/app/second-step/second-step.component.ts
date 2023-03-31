@@ -34,6 +34,7 @@ export class SecondStepComponent implements OnInit {
 
   yearlyPlanSelected : boolean = false; 
   planSelected = null;
+  showError = false;
 
   constructor(formService : FormInfoService) {
     this.formService = formService;
@@ -44,8 +45,12 @@ export class SecondStepComponent implements OnInit {
   }
 
   nextStep(){
-    console.log(this.plans);
-    this.formService?.changeToStep(3);
+
+    if(this.planSelected != null){
+      this.formService?.changeToStep(3);
+    }else{
+      this.showError = true;
+    }
   }
 
   togglePlanType(){
@@ -54,6 +59,7 @@ export class SecondStepComponent implements OnInit {
 
   selectPlanType(plan : any){
     this.planSelected = plan;
+    this.showError = false;
   }
 
   goBack(event : any){

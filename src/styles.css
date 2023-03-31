@@ -34,6 +34,7 @@ body{
     font-family: "Ubuntu-Medium";
     font-size: 16px;
     color: var(--marine-blue);
+    background-color: var(--magnolia) !important;
 }
 
 input[type = "text"]{
@@ -87,6 +88,10 @@ input:focus{
     max-width: 960px;
     width: 100%;
     margin: auto auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: var(--light-gray) 0px 18px 50px -10px;
 }
 
 .bullet-stepper{
@@ -235,7 +240,7 @@ app-second-step{
 
 .plan:hover{
     cursor: pointer;
-    border-color: var(--marine-blue);
+    border-color: var(--purplish-blue);
 }
 
 .plan-icon{
@@ -318,7 +323,7 @@ app-second-step{
 }
 
 .selected{
-    border-color: var(--marine-blue);
+    border-color: var(--purplish-blue);
 }
 
 .select-plan-span{
@@ -351,7 +356,6 @@ app-second-step{
 }
 
 app-multi-step-form{
-    
     height: 100vh;
     display: flex;
 }

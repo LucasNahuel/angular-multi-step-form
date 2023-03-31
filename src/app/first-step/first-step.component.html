@@ -16,43 +16,43 @@
 
             <div class="label-container">
                 <label for="name">Name</label>
-                <div class="input-error" *ngIf="this.firstForm.get('name')?.errors?.['required'] && this.firstForm.get('name')?.pristine == false">
+                <div class="input-error" *ngIf="this.firstForm.get('name')?.errors?.['required'] && this.firstForm.get('name')?.touched == true">
                     This field is required
                 </div>
-                <div class="input-error" *ngIf="this.firstForm.get('name')?.errors?.['maxlength'] && this.firstForm.get('name')?.pristine == false">
+                <div class="input-error" *ngIf="this.firstForm.get('name')?.errors?.['maxlength'] && this.firstForm.get('name')?.touched == true">
                     Too long
                 </div>
             </div>
-            <input placeholder="e.g. Stephen King" type="text" formControlName="name" [ngClass]="{'input-invalid': this.firstForm.get('name')?.invalid === true && this.firstForm.get('name')?.pristine === false}">
+            <input placeholder="e.g. Stephen King" type="text" formControlName="name" [ngClass]="{'input-invalid': this.firstForm.get('name')?.invalid === true && this.firstForm.get('name')?.touched === true}">
         </div>
 
         <div class="form-group">
             <div class="label-container">
                 <label for="name">Email address</label>
-                <div class="input-error" *ngIf="this.firstForm.get('email')?.errors?.['required'] && this.firstForm.get('email')?.pristine == false">
+                <div class="input-error" *ngIf="this.firstForm.get('email')?.errors?.['required'] && this.firstForm.get('email')?.touched == true">
                     This field is required
                 </div>
-                <div class="input-error" *ngIf="this.firstForm.get('email')?.errors?.['maxlength'] && this.firstForm.get('email')?.pristine == false">
+                <div class="input-error" *ngIf="this.firstForm.get('email')?.errors?.['maxlength'] && this.firstForm.get('email')?.touched == true">
                     Too long
                 </div>
-                <div class="input-error" *ngIf="this.firstForm.get('email')?.errors?.['email'] && this.firstForm.get('email')?.pristine == false">
+                <div class="input-error" *ngIf="this.firstForm.get('email')?.errors?.['email'] && this.firstForm.get('email')?.touched == true">
                     Invalid email address
                 </div>
             </div>
-            <input email placeholder="e.g. stephenking@lorem.com" type="email" formControlName="email" [ngClass]="{'input-invalid': this.firstForm.get('email')?.invalid === true && this.firstForm.get('email')?.pristine === false}">
+            <input email placeholder="e.g. stephenking@lorem.com" type="email" formControlName="email" [ngClass]="{'input-invalid': this.firstForm.get('email')?.invalid === true && this.firstForm.get('email')?.touched === true}">
         </div>
 
         <div class="form-group">
             <div class="label-container">
                 <label for="name">Phone number</label>
-                <div class="input-error" *ngIf="this.firstForm.get('phone')?.errors?.['required'] && this.firstForm.get('phone')?.pristine == false">
+                <div class="input-error" *ngIf="this.firstForm.get('phone')?.errors?.['required'] && this.firstForm.get('phone')?.touched == true">
                     This field is required
                 </div>
-                <div class="input-error" *ngIf="this.firstForm.get('phone')?.errors?.['maxlength'] && this.firstForm.get('phone')?.pristine == false">
+                <div class="input-error" *ngIf="this.firstForm.get('phone')?.errors?.['maxlength'] && this.firstForm.get('phone')?.touched == true">
                     Too long
                 </div>
             </div>
-            <input placeholder="e.g. +1 234 567 890" type="number" formControlName="phone" [ngClass]="{'input-invalid': this.firstForm.get('phone')?.invalid === true && this.firstForm.get('phone')?.pristine === false}">
+            <input placeholder="e.g. +1 234 567 890" type="number" formControlName="phone" [ngClass]="{'input-invalid': this.firstForm.get('phone')?.invalid === true && this.firstForm.get('phone')?.touched === true}">
         </div>
 
 

@@ -29,8 +29,15 @@ export class FirstStepComponent implements OnInit {
   }
 
   nextStep(event : any){
-    this.formService?.changeToStep(2);
-    event.preventDefault();
+
+    if(this.firstForm.valid == true){
+        
+      this.formService?.changeToStep(2);
+      event.preventDefault();
+    }else{
+      
+      this.firstForm.markAllAsTouched();
+    }
   }
 
 }

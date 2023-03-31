@@ -69,6 +69,7 @@ input[type = "email"]{
 
 input:hover{
     cursor: pointer;
+    border-color: var(--purplish-blue);
 }
 
 input:focus{
@@ -162,7 +163,7 @@ input::-webkit-inner-spin-button {
 }
 
 .input-invalid{
-    border-color: var(--strawberry-red);
+    border-color: var(--strawberry-red) !important;
 }
 
 .step-link{
@@ -379,7 +380,7 @@ app-third-step{
 
 .add-on:hover{
     cursor: pointer;
-    border-color: var(--marine-blue);
+    border-color: var(--purplish-blue);
 }
 
 .add-on-content{
@@ -438,4 +439,15 @@ input[type=checkbox]:checked:before{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.addon-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1.5em;
+}
+
+.addon-selected{
+    border-color: var(--purplish-blue);
 }

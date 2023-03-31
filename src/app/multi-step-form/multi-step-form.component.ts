@@ -8,17 +8,18 @@ import { FormInfoService } from '../form-info.service';
 })
 export class MultiStepFormComponent implements OnInit {
 
-  selectedStep = "first-step";
+  selectedStep : number = 1 ;
+  formService : FormInfoService | undefined;
 
-  constructor(formService : FormInfoService) { }
+  constructor(formService : FormInfoService) {
+    this.formService = formService;
+    this.formService.changeStep.subscribe((val) => {
+      this.selectedStep = val;
+    });
+  }
 
   ngOnInit(): void {
   }
 
-  changeStep(step : string){
-    console.log(step);
-    
-    this.selectedStep = step;
-  }
-
+ 
 }

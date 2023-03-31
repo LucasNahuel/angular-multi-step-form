@@ -1,6 +1,6 @@
 <div class="bullet-stepper">
     <div class="step-link" style="margin-top: 3em">
-        <div class="step-number">
+        <div class="step-number" [ngClass]="{'active-step' : actualStep == 1}">
             1
         </div>
 
@@ -11,7 +11,7 @@
     </div>
 
     <div class="step-link">
-        <div class="step-number">
+        <div class="step-number" [ngClass]="{'active-step' : actualStep == 2}">
             2
         </div>
 
@@ -22,7 +22,7 @@
     </div>
 
     <div class="step-link">
-        <div class="step-number">
+        <div class="step-number" [ngClass]="{'active-step' : actualStep == 3}">
             3
         </div>
 
@@ -33,7 +33,7 @@
     </div>
 
     <div class="step-link">
-        <div class="step-number">
+        <div class="step-number" [ngClass]="{'active-step' : actualStep == 4}">
             4
         </div>
 

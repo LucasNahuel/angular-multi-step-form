@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormInfoService } from '../form-info.service';
 
 @Component({
   selector: 'app-second-step',
@@ -8,8 +9,7 @@ import { CommonModule } from '@angular/common';
 })
 export class SecondStepComponent implements OnInit {
 
-  @Output() changeStep = new EventEmitter<string>();
-
+  formService : FormInfoService | undefined;
   
   plans = [{
       name : "Arcade",
@@ -35,19 +35,21 @@ export class SecondStepComponent implements OnInit {
   yearlyPlanSelected : boolean = false; 
   planSelected = null;
 
-  constructor() { }
+  constructor(formService : FormInfoService) {
+    this.formService = formService;
+    
+   }
 
   ngOnInit(): void {
   }
 
   nextStep(){
     console.log(this.plans);
+    this.formService?.changeToStep(3);
   }
 
   togglePlanType(){
     this.yearlyPlanSelected = !this.yearlyPlanSelected;
-
-    console.log(this.yearlyPlanSelected);
   }
 
   selectPlanType(plan : any){
@@ -56,8 +58,7 @@ export class SecondStepComponent implements OnInit {
 
   goBack(event : any){
     event.preventDefault();
-    console.log("called back from second step");
-    this.changeStep.emit("first-step");
+    this.formService?.changeToStep(1);
   }
 
 }

@@ -4,12 +4,15 @@
 
     </app-bullet-stepper>
 
-    <app-first-step (changeStep)="changeStep($event)" [ngClass]="{'hidden' : selectedStep != 'first-step'}">
+    <app-first-step  [ngClass]="{'hidden' : selectedStep != 1}">
 
     </app-first-step>
 
-    <app-second-step (changeStep)="changeStep($event)" [ngClass]="{'hidden' : selectedStep != 'second-step'}">
+    <app-second-step  [ngClass]="{'hidden' : selectedStep != 2}">
 
     </app-second-step>
 
+    <app-third-step [ngClass]="{'hidden' : selectedStep != 3}">
+        
+    </app-third-step>
 </div>

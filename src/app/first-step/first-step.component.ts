@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Output, EventEmitter } from '@angular/core';
+import { FormInfoService } from '../form-info.service';
 
 @Component({
   selector: 'app-first-step',
@@ -9,7 +10,8 @@ import { Output, EventEmitter } from '@angular/core';
 })
 export class FirstStepComponent implements OnInit {
 
-  @Output() changeStep = new EventEmitter<string>();
+
+  formService: FormInfoService | undefined;
 
   firstForm = new FormGroup({
     name : new FormControl('', [ Validators.minLength(1), Validators.maxLength(300), Validators.required]),
@@ -17,14 +19,17 @@ export class FirstStepComponent implements OnInit {
     phone : new FormControl('', [Validators.minLength(1), Validators.maxLength(300), Validators.required])
   });
 
-  constructor() { }
+  constructor(formService : FormInfoService) {
+
+    this.formService = formService;
+
+  }
 
   ngOnInit(): void {
   }
 
   nextStep(event : any){
-    this.changeStep.emit("second-step");
-    
+    this.formService?.changeToStep(2);
     event.preventDefault();
   }
 

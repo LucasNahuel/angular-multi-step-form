@@ -8,6 +8,7 @@ import { FirstStepComponent } from './first-step/first-step.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SecondStepComponent } from './second-step/second-step.component';
 import { CommonModule } from '@angular/common';
+import { ThirdStepComponent } from './third-step/third-step.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { CommonModule } from '@angular/common';
     BulletStepperComponent,
     FirstStepComponent,
     SecondStepComponent,
+    ThirdStepComponent,
   ],
   imports: [
     BrowserModule,

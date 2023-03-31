@@ -1,0 +1,22 @@
+<div class="third-step">
+
+    <h1 style="margin-block-start: 1.5em">Pick Add-Ons</h1>
+    
+    <p style="color: var(--cool-gray);">You have the option of monthly or yearly biling.</p> 
+
+    <div class="add-on">
+        <div class="add-on-content">
+            <input type="checkbox" checked="false">
+            <div class="add-on-description" >
+                <h4 class="add-on-title">Online Service</h4>
+                <p class="add-on-text">Access to multiplayer games</p>
+            </div>
+            <div class="add-on-price">+$1/mo</div>
+        </div>
+    </div>
+
+    <div class="button-submit-container" >
+        <button class="go-back-button" (click)="this.goBack()">Go Back</button>
+        <button class="submit-button" (click)="this.nextStep()">Next Step</button>
+    </div>
+</div>

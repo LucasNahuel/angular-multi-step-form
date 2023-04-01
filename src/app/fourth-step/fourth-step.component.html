@@ -1,0 +1,48 @@
+<div class="fourth-step">
+
+    
+    <h1 style="margin-block-start: 1.5em">Finishing up</h1>
+    
+    <p style="color: var(--cool-gray);">Double-check everything looks OK before confirming.</p> 
+    
+
+    <div class="summary">
+
+        <div class="plan-summary">
+
+            <div class="plan-summary-description">
+                <p style="margin-block: 0;">{{this.formService?.planSelectedName}} ({{this.formService?.yearlyPlanSelected ? 'Yearly' : 'Monthly'}})</p>
+                <p class="change-plan-link" (click)="this.formService?.changeToStep(2)">Change</p>
+            </div>
+    
+            <div>
+                ${{this.formService?.planSelectedPrice}}/{{this.formService?.yearlyPlanSelected ? 'yr' : 'mo'}}
+            </div>
+            
+        </div>
+    
+        <div class="addon-summary-container">
+            <div class="addon-summary" *ngFor="let addon of this.formService?.addonsList">
+                <p style="color: var(--cool-gray); margin-block: 0.5em;">{{addon.name}}</p>
+                <p *ngIf="!this.formService?.yearlyPlanSelected" style="margin-block: 0.5em;">+{{addon.monthlyPrice}}/mo</p>
+                <p *ngIf="this.formService?.yearlyPlanSelected" style="margin-block: 0.5em;">+{{addon.yearlyPrice}}/yr</p>
+            </div>
+        </div>
+    
+    
+        <div class="total">
+            
+            <p style="color: var(--cool-gray)">Total (per {{this.formService?.yearlyPlanSelected ? "year" : "month"}}) </p>
+            <p style="color: var(--purplish-blue); font-size: 20px;">${{this.formService!.calcTotal()}}/{{this.formService?.yearlyPlanSelected ? "yr" : "mo"}}</p>
+        </div>
+
+    </div>
+    
+    
+
+    <div class="button-submit-container" >
+        <button class="go-back-button" (click)="this.goBack()">Go Back</button>
+        <button class="submit-button" style="background-color: var(--purplish-blue)" (click)="this.nextStep()">Confirm</button>
+    </div>  
+
+</div>

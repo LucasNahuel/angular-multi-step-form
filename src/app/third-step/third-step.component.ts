@@ -10,24 +10,28 @@ export class ThirdStepComponent implements OnInit {
 
   formService : FormInfoService | undefined;
 
+
   addons = [
     {
       name : "Online services",
       description: "Access to multiplayer games",
       selected: false,
-      monthlyPrice: 1
+      monthlyPrice: 1,
+      yearlyPrice: 10
     },
     {
       name : "Larger Storage",
       description: "Extra 1TB of cloud save",
       selected: false,
-      monthlyPrice: 2
+      monthlyPrice: 2,
+      yearlyPrice: 20
     },
     {
       name : "Customizable profile",
       description: "Custom theme on your profile",
       selected: false,
-      monthlyPrice: 2
+      monthlyPrice: 2,
+      yearlyPrice: 20
     }
   ]
 
@@ -44,7 +48,19 @@ export class ThirdStepComponent implements OnInit {
   }
 
   nextStep(){
+
+    //passes the selected addons to the formService
+    let selectedAddons = new Array();
+    this.addons.forEach(el=>{
+      if(el.selected){
+        selectedAddons!.push(el);
+      }
+    });
+    this.formService!.addonsList = selectedAddons;
+    
+    //change to next step
     this.formService?.changeToStep(4);
+    
   }
 
   toggleAddon(index : number){

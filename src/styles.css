@@ -134,7 +134,7 @@ app-first-step{
 }
 
 .submit-button{
-    padding: 1em;
+    padding: 1em 2em;
     color: white;
     background-color: var(--marine-blue);
     outline: none;
@@ -454,4 +454,94 @@ input[type=checkbox]:checked:before{
 
 .addon-selected{
     border-color: var(--purplish-blue);
+}
+
+app-fourth-step{
+    display: flex;
+    width: 100%;
+}
+
+.fourth-step{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    
+    height: 100%;
+}
+
+.plan-summary{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+}
+
+.plan-summary-description{
+    display: flex;
+    flex-direction: column;
+}
+
+.change-plan-link{
+    margin-block: 0;
+    text-decoration: underline;
+    color: var(--cool-gray);
+}
+
+.change-plan-link:hover{
+    cursor: pointer;
+    color: var(--purplish-blue);
+}
+
+.plan-summary{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addon-summary-container{
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.addon-summary{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.total{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.summary{
+    display: flex;
+    flex-direction: column;
+    margin: 0 1.5em;
+}
+
+@media(max-width: 720px){
+
+    .form-root{
+        flex-direction: column;
+    }
+ 
+ .bullet-stepper{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    flex-direction: row;
+    }
+
+    .step-title{
+        display: none;
+    }
+
+    .step-info{
+        display: none;
+    }
 }

@@ -9,6 +9,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SecondStepComponent } from './second-step/second-step.component';
 import { CommonModule } from '@angular/common';
 import { ThirdStepComponent } from './third-step/third-step.component';
+import { FourthStepComponent } from './fourth-step/fourth-step.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ThirdStepComponent } from './third-step/third-step.component';
     FirstStepComponent,
     SecondStepComponent,
     ThirdStepComponent,
+    FourthStepComponent,
   ],
   imports: [
     BrowserModule,

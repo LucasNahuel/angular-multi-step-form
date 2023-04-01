@@ -12,7 +12,9 @@
                     <h4 class="add-on-title">{{item.name}}</h4>
                     <p class="add-on-text">{{item.description}}</p>
                 </div>
-                <div class="add-on-price">+${{item.monthlyPrice}}/mo</div>
+                <div class="add-on-price" *ngIf="!this.formService?.yearlyPlanSelected">+${{item.monthlyPrice}}/mo</div>
+                
+                <div class="add-on-price" *ngIf="this.formService?.yearlyPlanSelected">+${{item.yearlyPrice}}/yr</div>
             </div>
         </div>
     </div>

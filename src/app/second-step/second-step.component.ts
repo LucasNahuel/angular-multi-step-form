@@ -33,7 +33,7 @@ export class SecondStepComponent implements OnInit {
   ];
 
   yearlyPlanSelected : boolean = false; 
-  planSelected = null;
+  planSelected : any | undefined;
   showError = false;
 
   constructor(formService : FormInfoService) {
@@ -46,9 +46,25 @@ export class SecondStepComponent implements OnInit {
 
   nextStep(){
 
-    if(this.planSelected != null){
+
+    //if a plan was selected, go to next step
+    if(this.planSelected != undefined){
+
+      //pass to the formService the info of the selected plan
+      this.formService!.planSelectedName = this.planSelected.name;
+      this.formService!.yearlyPlanSelected = this.yearlyPlanSelected;
+      //if yearly price is selected, we pass the yearly price, if not, the monthly price
+      if(this.formService?.yearlyPlanSelected == true){
+        this.formService!.planSelectedPrice = this.planSelected.yearlyPrice;
+      }else{
+        this.formService!.planSelectedPrice = this.planSelected.monthlyPrice;
+      }
+
+
+      //go next step
       this.formService?.changeToStep(3);
     }else{
+      //if no plan is selected, we show an error
       this.showError = true;
     }
   }

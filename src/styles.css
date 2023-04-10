@@ -96,11 +96,9 @@ input:focus{
 
 .bullet-stepper{
     background-image: url(./assets/images/bg-sidebar-desktop.svg);
-    height: 568px;
+    padding-top: 3em;
+    height: calc(568px - 3em);
     width: 274px;
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
 }
 
 app-first-step{
@@ -174,7 +172,6 @@ input::-webkit-inner-spin-button {
 .step-link{
     display: flex;
     flex-direction: row;
-    margin: 0 2em 0 2em;
     gap: 1em;
 }
 
@@ -523,18 +520,34 @@ app-fourth-step{
     margin: 0 1.5em;
 }
 
+.step-link-container{
+    margin: 0 2em 0 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
 @media(max-width: 720px){
 
     .form-root{
         flex-direction: column;
+        padding: 0.5em;
+        box-shadow: none;
+        background-color: var(--magnolia);
     }
  
  .bullet-stepper{
     width: 100%;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: 50% 92.5%;;
     background-size: cover;
     flex-direction: row;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25%;
+    padding-top: 2em;
+
     }
 
     .step-title{
@@ -544,4 +557,21 @@ app-fourth-step{
     .step-info{
         display: none;
     }
+
+    app-first-step, app-second-step, app-third-step, app-fourth-step{
+        z-index: 1;
+        background-color: white;
+        border-radius: 7px;
+        padding: 0 1.5em 0 1.5em;
+        width: calc(100% - 4em);
+        margin-top: +2em;
+        box-shadow: var(--light-gray) 0px 18px 50px -10px;
+    }
+
+    .step-link-container{
+        flex-direction: row;
+        justify-content: center;
+        gap: 0em;
+    }
+
 }

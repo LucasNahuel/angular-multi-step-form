@@ -2,7 +2,7 @@
 
     <h1 style="margin-block-start: 1.5em">Pick Add-Ons</h1>
     
-    <p style="color: var(--cool-gray);">Add-ons help enhance your gaming experience.</p> 
+    <p class="step-description"  style="color: var(--cool-gray);">Add-ons help enhance your gaming experience.</p> 
 
     <div class="addon-container">
         <div class="add-on" *ngFor="let item of addons; let i = index" (click)="this.toggleAddon(i)" [ngClass]="{'addon-selected': item.selected === true}">

@@ -35,6 +35,7 @@ body{
     font-size: 16px;
     color: var(--marine-blue);
     background-color: var(--magnolia) !important;
+    margin: 0;
 }
 
 input[type = "text"]{
@@ -85,7 +86,7 @@ input:focus{
 .form-root{
     display: flex;
     flex-direction: row;
-    max-width: 960px;
+    max-width: calc(960px - 2em);
     width: 100%;
     margin: auto auto;
     background-color: white;
@@ -531,7 +532,7 @@ app-fourth-step{
 
     .form-root{
         flex-direction: column;
-        padding: 0.5em;
+        padding: 1em;
         box-shadow: none;
         background-color: var(--magnolia);
     }
@@ -539,7 +540,7 @@ app-fourth-step{
  .bullet-stepper{
     width: 100%;
     background-repeat: no-repeat;
-    background-position: 50% 92.5%;;
+    background-position: 50% 90%;;
     background-size: cover;
     flex-direction: row;
     position: absolute;
@@ -547,7 +548,7 @@ app-fourth-step{
     left: 0;
     height: 25%;
     padding-top: 2em;
-
+    height: 150px;
     }
 
     .step-title{
@@ -563,9 +564,11 @@ app-fourth-step{
         background-color: white;
         border-radius: 7px;
         padding: 0 1.5em 0 1.5em;
-        width: calc(100% - 4em);
-        margin-top: +2em;
+        width: calc(100% - 5em);
         box-shadow: var(--light-gray) 0px 18px 50px -10px;
+        margin: 0 auto;
+        top: 100px;
+        position: absolute;
     }
 
     .step-link-container{
@@ -573,5 +576,65 @@ app-fourth-step{
         justify-content: center;
         gap: 0em;
     }
+
+    h1{
+        font-size: 1.5em;
+    }
+
+    .plan-list{
+        flex-direction: column;
+        gap: 0.5em;
+        margin: 1em 0;
+    }
+
+    .plan{
+        margin: 0 0;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .step-description{
+        margin-block: 0;
+        
+        font-size: 18px;
+    }
+
+    .submit-button{
+        position: fixed;
+        inset: auto 1em 1em auto;
+    }
+
+    .button-submit-container{
+        height: 1em;
+    }
+
+    .go-back-button{
+        position: fixed;
+        inset: auto auto 1em 1em;
+        padding: 1em 0em;
+    }
+
+    .plan-switch{
+        margin: 1em 0em;
+    }
+    
+    .addon-container{
+        gap: 0.5em;
+    }
+
+    .add-on-text{
+        margin-block-start: 4px;
+        font-size: 13px;
+    }
+    .add-on-price{
+        font-size: 13px;
+    }
+
+    .add-on-content{
+        margin: 0.7em 0.7em;
+        width: calc(100% - 1.4em);
+        gap: 0em;
+    }
+
 
 }

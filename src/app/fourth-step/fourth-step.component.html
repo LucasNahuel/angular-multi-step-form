@@ -3,7 +3,7 @@
     
     <h1 style="margin-block-start: 1.5em">Finishing up</h1>
     
-    <p style="color: var(--cool-gray);">Double-check everything looks OK before confirming.</p> 
+    <p class="step-description"  style="color: var(--cool-gray);">Double-check everything looks OK before confirming.</p> 
     
 
     <div class="summary">
@@ -33,7 +33,7 @@
         <div class="total">
             
             <p style="color: var(--cool-gray)">Total (per {{this.formService?.yearlyPlanSelected ? "year" : "month"}}) </p>
-            <p style="color: var(--purplish-blue); font-size: 20px;">${{this.formService!.calcTotal()}}/{{this.formService?.yearlyPlanSelected ? "yr" : "mo"}}</p>
+            <p style="color: var(--purplish-blue); font-size: 20px; margin-block: auto;">${{this.formService!.calcTotal()}}/{{this.formService?.yearlyPlanSelected ? "yr" : "mo"}}</p>
         </div>
 
     </div>

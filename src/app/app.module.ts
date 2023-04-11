@@ -10,6 +10,7 @@ import { SecondStepComponent } from './second-step/second-step.component';
 import { CommonModule } from '@angular/common';
 import { ThirdStepComponent } from './third-step/third-step.component';
 import { FourthStepComponent } from './fourth-step/fourth-step.component';
+import { ThanksScreenComponent } from './thanks-screen/thanks-screen.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FourthStepComponent } from './fourth-step/fourth-step.component';
     SecondStepComponent,
     ThirdStepComponent,
     FourthStepComponent,
+    ThanksScreenComponent,
   ],
   imports: [
     BrowserModule,

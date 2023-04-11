@@ -23,5 +23,7 @@ export class FourthStepComponent implements OnInit {
   }
 
   nextStep(){
+
+    this.formService?.changeToStep(5);
   }
 }

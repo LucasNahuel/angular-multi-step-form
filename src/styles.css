@@ -182,12 +182,12 @@ input::-webkit-inner-spin-button {
     border-style: solid;
     border-radius: 50%;
     border-width: 1px;
-    border-color: var(--pastel-blue);
+    border-color: var(--white);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    color: var(--pastel-blue)
+    color: var(--white)
 }
 
 .step-description{
@@ -528,6 +528,22 @@ app-fourth-step{
     gap: 2em;
 }
 
+
+app-thanks-screen{
+    display: flex;
+    max-width: 500px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto auto;
+}
+
+app-first-step, app-second-step, app-third-step, app-fourth-step, app-thanks-screen{
+    padding: 1em;
+}
+
 @media(max-width: 720px){
 
     .form-root{
@@ -559,7 +575,7 @@ app-fourth-step{
         display: none;
     }
 
-    app-first-step, app-second-step, app-third-step, app-fourth-step{
+    app-first-step, app-second-step, app-third-step, app-fourth-step, app-thanks-screen{
         z-index: 1;
         background-color: white;
         border-radius: 7px;
@@ -636,5 +652,16 @@ app-fourth-step{
         gap: 0em;
     }
 
+    app-thanks-screen{
+        max-width: none;
+        max-height: 400px;
+    }
+
+    app-thanks-screen img{
+        height: 55px;
+    }
+
 
 }
+
+

@@ -52,7 +52,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github](https://github.com/LucasNahuel/angular-multi-step-form)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [live at Vercel](https://angular-multi-step-form.vercel.app/)
 
 ## My process
 
@@ -87,7 +87,7 @@ First time i've needed to offset an background image:
 ## Author
 
 - Website - [Lucas Munoz Portfolio](https://angular-portfolio-lake.vercel.app/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/LucasNahuel)
+- Frontend Mentor - [@LucasNahuel](https://www.frontendmentor.io/profile/LucasNahuel)
 
 ## Acknowledgments
 
